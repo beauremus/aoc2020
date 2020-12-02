@@ -1,0 +1,7 @@
+# Exlcude all files and the explicitly include files below
+*
+
+!.gitignore
+!**/
+!**/*.go
+!**/input.txt
