@@ -1,5 +1,6 @@
 package day01
 
+// Part2 takes a list of numbers and outputs a single number
 func Part2(numberInput []int) int {
 	for _, firstValue := range numberInput {
 		for _, secondValue := range numberInput {
