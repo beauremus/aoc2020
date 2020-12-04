@@ -2,6 +2,7 @@ package utilities
 
 import "strconv"
 
+// StringsToInts takes an array of strings and returns a list of ints.
 func StringsToInts(input []string) []int {
 	var output []int
 
