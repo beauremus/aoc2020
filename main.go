@@ -3,6 +3,7 @@ package main
 import (
 	"aoc/2020/day01"
 	"aoc/2020/day02"
+	"aoc/2020/day03"
 	"aoc/2020/utilities"
 	"fmt"
 )
@@ -10,8 +11,9 @@ import (
 func main() {
 	var day01Input, day01Err = utilities.Read("./day01/input.txt")
 	var day02Input, day02Err = utilities.Read("./day02/input.txt")
+	var day03Input, day03Err = utilities.Read("./day03/input.txt")
 
-	if day01Err != nil || day02Err != nil {
+	if day01Err != nil || day02Err != nil || day03Err != nil {
 		return
 	}
 
@@ -25,4 +27,6 @@ func main() {
 	)
 	fmt.Printf("Day 2 - Part 1: %v\n", day02.Part1(day02Input))
 	fmt.Printf("Day 2 - Part 2: %v\n", day02.Part2(day02Input))
+	fmt.Printf("Day 3 - Part 1: %v\n", day03.Part1(day03Input))
+	fmt.Printf("Day 3 - Part 2: %v\n", day03.Part2(day03Input))
 }
