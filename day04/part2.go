@@ -7,6 +7,11 @@ import (
 	"strings"
 )
 
+var (
+	hexRE = regexp.MustCompile(`^#[0-9a-f]{6}`)
+	pidRE = regexp.MustCompile(`^[0-9]{9}`)
+)
+
 func between(min int, max int) func(int) bool {
 	return func(testValue int) bool {
 		return testValue >= min && testValue <= max
@@ -14,15 +19,11 @@ func between(min int, max int) func(int) bool {
 }
 
 func isHexColor(input string) bool {
-	matched, _ := regexp.MatchString(`#[0-9a-f]{6}`, input)
-
-	return matched
+	return hexRE.MatchString(input)
 }
 
 func isPID(input string) bool {
-	matched, _ := regexp.MatchString(`[0-9]{9}`, input)
-
-	return matched
+	return pidRE.MatchString(input)
 }
 
 // Part2 takes a list of numbers and outputs a single number
