@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	hexRE = regexp.MustCompile(`^#[0-9a-f]{6}`)
-	pidRE = regexp.MustCompile(`^[0-9]{9}`)
+	hexRE = regexp.MustCompile(`^#[0-9a-f]{6}$`)
+	pidRE = regexp.MustCompile(`^[0-9]{9}$`)
 )
 
 func between(min int, max int) func(int) bool {
