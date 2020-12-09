@@ -38,50 +38,46 @@ func Part2(stringInput []string) int {
 	for _, passport := range utilities.RequiredFieldsPresent(stringInput) {
 		validFieldCount := 0
 
+	passport:
 		for key, value := range passport {
-			if key == "ecl" {
+			switch key {
+			case "ecl":
 				if !utilities.Contains(eclValues, value) {
-					break
+					break passport
 				}
-			}
-			if key == "pid" {
+			case "pid":
 				if !isPID(value) {
-					break
+					break passport
 				}
-			}
-			if key == "eyr" {
+			case "eyr":
 				year, _ := strconv.Atoi(value)
 				if !eyr(year) {
-					break
+					break passport
 				}
-			}
-			if key == "hcl" {
+			case "hcl":
 				if !isHexColor(value) {
-					break
+					break passport
 				}
-			}
-			if key == "byr" {
+			case "byr":
 				year, _ := strconv.Atoi(value)
 				if !byr(year) {
-					break
+					break passport
 				}
-			}
-			if key == "iyr" {
+			case "iyr":
 				year, _ := strconv.Atoi(value)
 				if !iyr(year) {
-					break
+					break passport
 				}
-			}
-			if key == "hgt" {
+			case "hgt":
 				if strings.HasSuffix(value, "cm") {
 					height, _ := strconv.Atoi(strings.TrimSuffix(value, "cm"))
 					if !hgtcm(height) {
-						break
+						break passport
 					}
 				} else if strings.HasSuffix(value, "in") {
 					height, _ := strconv.Atoi(strings.TrimSuffix(value, "in"))
 					if !hgtin(height) {
-						break
+						break passport
 					}
 				}
 			}
