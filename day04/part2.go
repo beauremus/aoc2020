@@ -80,6 +80,8 @@ func Part2(stringInput []string) int {
 						break passport
 					}
 				}
+			case "cid":
+				break
 			}
 
 			validFieldCount++
