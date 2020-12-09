@@ -9,11 +9,7 @@ import (
 
 func between(min int, max int) func(int) bool {
 	return func(testValue int) bool {
-		if testValue >= min && testValue <= max {
-			return true
-		}
-
-		return false
+		return testValue >= min && testValue <= max
 	}
 }
 
