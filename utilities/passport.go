@@ -34,7 +34,7 @@ func RequiredFieldsPresent(passports []string) []map[string]string {
 				}
 			}
 
-			if validFieldCount >= 7 {
+			if validFieldCount == 7 {
 				output = append(output, passportMap)
 			}
 		}

@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	hexRE = regexp.MustCompile(`^#[0-9a-f]{6}$`)
-	pidRE = regexp.MustCompile(`^[0-9]{9}$`)
+	hexRE = regexp.MustCompile(`^#[\da-f]{6}$`)
+	pidRE = regexp.MustCompile(`^\d{9}$`)
 )
 
 func between(min int, max int) func(int) bool {
@@ -88,8 +88,7 @@ func Part2(stringInput []string) int {
 			validFieldCount++
 		}
 
-		if validFieldCount >= 7 {
-			// fmt.Println(passport)
+		if validFieldCount == 7 {
 			validPassportCount++
 		}
 	}
