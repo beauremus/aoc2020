@@ -42,6 +42,8 @@ func Part2(stringInput []string) int {
 	passport:
 		for key, value := range passport {
 			switch key {
+			case "cid":
+				continue
 			case "ecl":
 				if !utilities.Contains(eclValues, value) {
 					break passport
@@ -80,9 +82,9 @@ func Part2(stringInput []string) int {
 					if !hgtin(height) {
 						break passport
 					}
+				} else {
+					break passport
 				}
-			case "cid":
-				break passport
 			}
 
 			validFieldCount++
